@@ -1,0 +1,29 @@
+{
+  "INC-2043": {
+    "cause": ["pool", "limit|maximum|max.connections|cap|capacity|size", "reduc|lower|cut|shrank|drop|smaller|from 80 to 20"],
+    "starts": ["2026-08-12T19:33:41Z"],
+    "log_evidence": ["checkout-service.log:9"],
+    "change_evidence": ["CHG-1042"],
+    "rejected_theory": "payment (?:provider|gateway)|provider (?:outage|timeout)",
+    "runbook": "RB-004",
+    "holdout": false
+  },
+  "INC-2051": {
+    "cause": ["settled_at|settlement|schema", "0000-00-00|placeholder|invalid date|poison", "stall|block|stuck|redeliver|validat"],
+    "starts": ["2026-08-05T02:11:57Z", "2026-08-05T02:13:28Z"],
+    "log_evidence": ["recon-worker.log:4", "recon-worker.log:9", "recon-worker.log:10"],
+    "change_evidence": ["CHG-1033"],
+    "rejected_theory": "re.?run|finished|success|1\\.9\\.4|deploy|logging",
+    "runbook": "RB-007",
+    "holdout": false
+  },
+  "INC-2062": {
+    "cause": ["cpu", "transcod", "contention|compet|co.locat|starv|throttl|noisy"],
+    "starts": ["2026-08-18T09:05:40Z", "2026-08-18T09:12:19Z"],
+    "log_evidence": ["search-service.log:5", "search-service.log:8", "search-service.log:13"],
+    "change_evidence": ["CHG-1048"],
+    "rejected_theory": "deploy|release|2\\.7\\.1",
+    "runbook": null,
+    "holdout": true
+  }
+}
